@@ -2,7 +2,7 @@ import { autobind } from '../decorators/autobind.js'
 import { Project, ProjectStatus } from '../models/project.js'
 import { state } from '../state/state.js'
 import * as Validation from '../utils/validation.js'
-import { Component } from './component.js'
+import Component from './component.js'
 
 type GatherUserInputResponse = {
     success: boolean,
