@@ -1,7 +1,7 @@
 import { autobind } from '../decorators/autobind.js'
 import { Project, ProjectStatus } from '../models/project.js'
 import { state } from '../state/state.js'
-import { Validatable, validate } from '../utils/validation.js'
+import * as Validation from '../utils/validation.js'
 import { Component } from './component.js'
 
 type GatherUserInputResponse = {
@@ -35,16 +35,16 @@ export class ProjectForm extends Component<HTMLDivElement, HTMLFormElement> {
         const enteredDescription = this.descriptionInputElement.value
         const enteredPeople = +this.peopleInputElement.value
 
-        const titleValidatable: Validatable = {
+        const titleValidatable: Validation.Validatable = {
             value: enteredTitle,
             required: true
         }
-        const descriptionValidatable: Validatable = {
+        const descriptionValidatable: Validation.Validatable = {
             value: enteredDescription,
             required: true,
             minLength: 5
         }
-        const peopleValidatable: Validatable = {
+        const peopleValidatable: Validation.Validatable = {
             value: +enteredPeople,
             required: true,
             min: 1,
@@ -52,9 +52,9 @@ export class ProjectForm extends Component<HTMLDivElement, HTMLFormElement> {
         }
 
         if (
-            !validate(titleValidatable) ||
-            !validate(descriptionValidatable) ||
-            !validate(peopleValidatable)
+            !Validation.validate(titleValidatable) ||
+            !Validation.validate(descriptionValidatable) ||
+            !Validation.validate(peopleValidatable)
         ) {
             console.log("Validation error")
             return { success: false, msg: "Validation error" }
