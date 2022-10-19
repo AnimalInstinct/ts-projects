@@ -1,4 +1,4 @@
-import { Project, ProjectStatus } from '../models/project.js'
+import { Project, ProjectStatus } from '../models/project'
 
 type RootState = { projects: Project[] }
 

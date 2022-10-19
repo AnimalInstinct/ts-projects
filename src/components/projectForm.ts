@@ -1,8 +1,8 @@
-import { autobind } from '../decorators/autobind.js'
-import { Project, ProjectStatus } from '../models/project.js'
-import { state } from '../state/state.js'
-import * as Validation from '../utils/validation.js'
-import Component from './component.js'
+import { autobind } from '../decorators/autobind'
+import { Project, ProjectStatus } from '../models/project'
+import { state } from '../state/state'
+import * as Validation from '../utils/validation'
+import Component from './component'
 
 type GatherUserInputResponse = {
     success: boolean,
