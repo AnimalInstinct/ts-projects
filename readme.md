@@ -13,8 +13,6 @@ Projects can be managed by drag and drop between projects list.
 ## Features, patterns and concepts used
 
 - Typescript
-  - Generics
-  - Namespaces
 - OOP
 - Decorators
 - State
